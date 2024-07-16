@@ -1,0 +1,12 @@
+{
+  "name": "monorepo-nlw-journey",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ZanellaIgor/Nlw-Journey.git",
+  "author": "Igor Zanella <120991541+ZanellaIgor@users.noreply.github.com>",
+  "license": "MIT"
+}
