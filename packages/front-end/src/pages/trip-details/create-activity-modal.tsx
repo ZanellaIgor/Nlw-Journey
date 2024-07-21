@@ -1,3 +1,4 @@
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Calendar, Tag, X } from 'lucide-react';
 import { FormEvent } from 'react';
 import { useParams } from 'react-router-dom';
@@ -12,6 +13,28 @@ export function CreateActivityModal({
   closeCreateActivityModal,
 }: CreateActivityModalProps) {
   const { tripId } = useParams();
+  const clientQuery = useQueryClient();
+  const mutation = useMutation({
+    mutationFn: ({
+      title,
+      occurs_at,
+    }: {
+      title: string;
+      occurs_at: string;
+    }) => {
+      return api.post(`/trips/${tripId}/activities`, {
+        title,
+        occurs_at,
+      });
+    },
+    onError: (error: any) => {
+      throw new Error(`Error creating activity ${error} `);
+    },
+    onSuccess: () => {
+      closeCreateActivityModal();
+      clientQuery.invalidateQueries({ queryKey: ['activities'] });
+    },
+  });
 
   async function createActivity(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,13 +43,11 @@ export function CreateActivityModal({
 
     const title = data.get('title')?.toString();
     const occurs_at = data.get('occurs_at')?.toString();
-
-    await api.post(`/trips/${tripId}/activities`, {
+    if (!title || !occurs_at) return;
+    mutation.mutate({
       title,
       occurs_at,
     });
-
-    window.document.location.reload();
   }
 
   return (

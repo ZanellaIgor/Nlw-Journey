@@ -2,9 +2,9 @@ import { useQuery } from '@tanstack/react-query';
 import { Trip } from '../interfaces/trip.interface';
 import { api } from '../lib/axios';
 
-async function fetchTripById(tripId: string): Promise<Trip[]> {
+async function fetchTripById(tripId: string): Promise<Trip> {
   try {
-    const response = await api.get(`trips/${tripId}/trip`);
+    const response = await api.get(`trips/${tripId}`);
     return response.data.trip;
   } catch (error) {
     throw new Error(`Failed to fetch trip ${tripId}`);

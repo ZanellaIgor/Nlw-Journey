@@ -9,7 +9,6 @@ export function DestinationAndDateHeader() {
 
   const { data: trip, isLoading } = useFetchTripId(tripId as string);
 
-  console.log(trip);
   const displayedDate = trip
     ? format(trip?.starts_at, "d' de 'LLL")
         .concat(' até ')
