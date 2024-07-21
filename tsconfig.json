@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@hooks/*": ["frontend/src/hooks/*"],
+      "@queries/*": ["frontend/src/queries/*"],
+      "@services/*": ["frontend/src/services/*"]
+    }
+  },
+  "references": [
+    { "path": "./packages/backend" },
+    { "path": "./packages/frontend" }
+  ]
+}

@@ -1,32 +1,19 @@
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { CircleCheck } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { api } from '../../lib/axios';
-
-interface Activity {
-  date: string;
-  activities: {
-    id: string;
-    title: string;
-    occurs_at: string;
-  }[];
-}
+import { useFetchActivityId } from '../../hooks/activity.query';
+import { ActivitiesPlaceholder } from './activities.placeholder';
 
 export function Activities() {
   const { tripId } = useParams();
-  const [activities, setActivities] = useState<Activity[]>([]);
 
-  useEffect(() => {
-    api
-      .get(`trips/${tripId}/activities`)
-      .then((response) => setActivities(response.data.activities));
-  }, [tripId]);
+  const { data: activities, isLoading } = useFetchActivityId(tripId as string);
 
+  if (isLoading) return <ActivitiesPlaceholder />;
   return (
     <div className="space-y-8">
-      {activities.map((category) => {
+      {activities?.map((category) => {
         return (
           <div key={category.date} className="space-y-2.5">
             <div className="flex gap-2 items-baseline">
@@ -41,7 +28,7 @@ export function Activities() {
               <div>
                 {category.activities.map((activity) => {
                   return (
-                    <div key={activity.id} className="space-y-2.5">
+                    <div key={activity.id} className="space-y-2.5 py-2">
                       <div className="px-4 py-2.5 bg-zinc-900 rounded-xl shadow-shape flex items-center gap-3">
                         <CircleCheck className="size-5 text-lime-300" />
                         <span className="text-zinc-100">{activity.title}</span>
