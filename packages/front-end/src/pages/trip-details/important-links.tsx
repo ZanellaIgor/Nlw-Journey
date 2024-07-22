@@ -1,5 +1,5 @@
-import { Link2, Plus } from "lucide-react";
-import { Button } from "../../components/button";
+import { Link2, Plus } from 'lucide-react';
+import { Button } from '../../components/button';
 
 export function ImportantLinks() {
   return (
@@ -9,8 +9,13 @@ export function ImportantLinks() {
       <div className="space-y-5">
         <div className="flex items-center justify-between gap-4">
           <div className="space-y-1.5">
-            <span className="block font-medium text-zinc-100">Reserva do AirBnB</span>
-            <a href="#" className="block text-xs text-zinc-400 truncate hover:text-zinc-200">
+            <span className="block font-medium text-zinc-100">
+              Reserva do AirBnB
+            </span>
+            <a
+              href="#"
+              className="block text-xs text-zinc-400 truncate hover:text-zinc-200"
+            >
               https://www.airbnb.com.br/rooms/10470001139028321098312093821903812038910
             </a>
           </div>
@@ -20,8 +25,13 @@ export function ImportantLinks() {
 
         <div className="flex items-center justify-between gap-4">
           <div className="space-y-1.5">
-            <span className="block font-medium text-zinc-100">Reserva do AirBnB</span>
-            <a href="#" className="block text-xs text-zinc-400 truncate hover:text-zinc-200">
+            <span className="block font-medium text-zinc-100">
+              Reserva do AirBnB
+            </span>
+            <a
+              href="#"
+              className="block text-xs text-zinc-400 truncate hover:text-zinc-200"
+            >
               https://www.airbnb.com.br/rooms/10470001139028321098312093821903812038910
             </a>
           </div>
@@ -35,5 +45,5 @@ export function ImportantLinks() {
         Cadastrar novo link
       </Button>
     </div>
-  )
+  );
 }

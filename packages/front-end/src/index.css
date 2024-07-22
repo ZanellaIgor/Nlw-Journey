@@ -9,3 +9,18 @@
 input {
   color-scheme: dark;
 }
+
+.rdp-day_selected {
+  color: rgb(24 24 27 / 1);
+  background-color: rgb(161 161 170 / 1);
+}
+.rdp-day_selected:hover {
+  transform: scale(1.05);
+  background-color: rgb(24 24 27 / 1);
+}
+
+.rdp-button_reset:hover,
+.rdp-button:hover,
+.rdp-day:hover {
+  background-color: rgb(161 161 170 / 1) !important;
+}

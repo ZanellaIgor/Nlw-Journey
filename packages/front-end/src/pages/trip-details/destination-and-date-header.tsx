@@ -7,7 +7,7 @@ import { useFetchTripId } from '../../hooks/trip.query';
 export function DestinationAndDateHeader() {
   const { tripId } = useParams();
 
-  const { data: trip, isLoading } = useFetchTripId(tripId as string);
+  const { data: trip } = useFetchTripId(tripId as string);
 
   const displayedDate = trip
     ? format(trip?.starts_at, "d' de 'LLL")
