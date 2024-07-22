@@ -38,6 +38,7 @@ export function CreateTripPage() {
       });
       return response.data;
     },
+
     onError: (error: any) => {
       if (error.response.data.message) {
         addToast(error.response.data.message, 'error');
@@ -46,6 +47,7 @@ export function CreateTripPage() {
       }
     },
     onSuccess: (data: { tripId: string }) => {
+      addToast('Viagem criada com sucesso!', 'success');
       navigate(`/trips/${data.tripId}`);
     },
   });
@@ -196,6 +198,7 @@ export function CreateTripPage() {
             setOwnerEmail={setOwnerEmail}
             destination={destination}
             dateTrip={eventStartAndEndDates as DateRange}
+            isPending={mutation.isPending}
           />
         )}
       </div>

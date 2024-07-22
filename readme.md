@@ -1,10 +1,10 @@
-### Projeto desenvolvido durante o evento NLW Journey da Rockseat
+# NLW Journey - Projeto Full-Stack
 
-Este é um projeto desenvolvido durante o evento NLW Journey da Rocketseat. O objetivo deste projeto é demonstrar e aprimorar, minhas habilidades em desenvolvimento Full-Stack utilizando tecnologias modernas.
+Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Seu objetivo é demonstrar e aprimorar minhas habilidades em desenvolvimento Full-Stack utilizando tecnologias modernas.
 
-# Sobre o Projeto
+## Sobre o Projeto
 
-O projeto consiste em um sistema completo com frontend e backend, desenvolvido com o intuito de aprimorar minhas habilidades e criar um exemplo prático para meu portfólio. Durante o evento, foram abordados conceitos avançados e melhores práticas que apliquei no desenvolvimento deste projeto.
+O projeto é uma aplicação completa, que abrange tanto o frontend quanto o backend, e serve como um exemplo prático para o meu portfólio. Ele foi desenvolvido com foco na criação de uma solução realista, utilizando melhores práticas e tecnologias atuais.
 
 ## Tecnologias 🚀
 
@@ -14,6 +14,7 @@ O projeto consiste em um sistema completo com frontend e backend, desenvolvido c
 - TypeScript
 - Vite ⚡️
 - Tailwind CSS
+- React Query
 
   **Back-End:**
 

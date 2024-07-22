@@ -10,6 +10,7 @@ interface ConfirmTripModalProps {
   createTrip: (event: FormEvent<HTMLFormElement>) => void;
   destination: string;
   dateTrip: DateRange;
+  isPending: boolean;
 }
 
 export function ConfirmTripModal({
@@ -19,6 +20,7 @@ export function ConfirmTripModal({
   setOwnerName,
   dateTrip,
   destination,
+  isPending,
 }: ConfirmTripModalProps) {
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
@@ -71,8 +73,8 @@ export function ConfirmTripModal({
             />
           </div>
 
-          <Button type="submit" size="full">
-            Confirmar criação da viagem
+          <Button type="submit" size="full" disabled={isPending}>
+            {isPending ? 'Confirmando...' : 'Confirmar criação da viagem'}
           </Button>
         </form>
       </div>

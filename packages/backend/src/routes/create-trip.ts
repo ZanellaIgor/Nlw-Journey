@@ -1,6 +1,5 @@
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
-import * as nodemailer from 'nodemailer';
 import { z } from 'zod';
 import { env } from '../env';
 import { ClientError } from '../errors/client-error';
@@ -95,8 +94,6 @@ export async function createTrip(app: FastifyInstance) {
         </div>
       `.trim(),
       });
-
-      console.log(nodemailer.getTestMessageUrl(message));
 
       return { tripId: trip.id };
     }

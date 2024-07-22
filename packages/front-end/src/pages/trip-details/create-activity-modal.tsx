@@ -31,10 +31,11 @@ export function CreateActivityModal({
       });
     },
     onError: (error: any) => {
-      addToast(error.response.data.error, 'error');
+      addToast(error.response.data.message, 'error');
       throw new Error(`Error creating activity ${error} `);
     },
     onSuccess: () => {
+      addToast('Atividade criada com sucesso!', 'success');
       closeCreateActivityModal();
       clientQuery.invalidateQueries({ queryKey: ['activities'] });
     },
